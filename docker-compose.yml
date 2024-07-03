@@ -1,0 +1,14 @@
+services:
+  debian:
+    build: .
+    volumes:
+      - ${FIREFOX_SOURCE}:/home/firefox/mozilla-unified
+      - mozbuild:/root/.mozbuild
+    env_file:
+      - .env
+    tty: true
+    stdin_open: true
+
+volumes:
+  mozbuild:
+
